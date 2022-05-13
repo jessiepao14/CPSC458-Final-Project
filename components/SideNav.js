@@ -11,7 +11,7 @@ export default function SideNav() {
     <Nav>
       {isTabletOrMobile ? (
         <>
-          <a class="active disabled">
+          <a className="active">
             <DashboardRoundedIcon />
           </a>
           <a>
@@ -23,7 +23,7 @@ export default function SideNav() {
         </>
       ) : (
         <>
-          <a class="active disabled">
+          <a className="active">
             <DashboardRoundedIcon />
             Dashboard
           </a>
@@ -61,6 +61,7 @@ const Nav = styled.div`
   margin-bottom: 0;
   border-right: 1px solid gray;
   gap: 5px;
+
   a {
     display: flex;
     align-items: center;
@@ -68,7 +69,7 @@ const Nav = styled.div`
     background-color: #fff;
     text-decoration: none;
     width: 80%;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 5px;
     // fill: #c0c0c0;
   }
@@ -80,8 +81,14 @@ const Nav = styled.div`
     background-color: #000;
     color: #fff;
   }
-  //   a:hover {
-  //     background-color: #d0d0d0;
-  //     color: #fff;
-  //   }
+
+  @media screen and (max-width: 1000px) {
+    width: 60px;
+    align-items: center;
+    a {
+      display: block;
+      padding: 5px 5px 5px 10px;
+      //   top right bottom left
+    }
+  }
 `;

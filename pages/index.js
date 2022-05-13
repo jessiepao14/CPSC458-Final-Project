@@ -92,6 +92,10 @@ const Body = styled.div`
   background-color: #f8f8f8;
   min-width: 75%;
   height: 100%;
+  @media screen and (max-width: 1000px) {
+    width: calc(100vw - 60px);
+    margin-left: 60px;
+  }
 `;
 
 const Cards = styled.div`
