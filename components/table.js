@@ -7,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function BasicTable({ type, rows }) {
+export default function BasicTable({ type, rows }) {
   //   const customColumnStyle = { width: 12, backgroundColor: "yellow" };
   return (
     <TableContainer component={Paper} style={{ tableLayout: "auto" }}>
@@ -33,28 +33,36 @@ function BasicTable({ type, rows }) {
           {type === "Food"
             ? rows.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={row.foodTitle}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {row.name}
+                    {row.foodTitle}
                   </TableCell>
-                  <TableCell align="right">{row.calories}</TableCell>
-                  <TableCell align="right">{row.fat}</TableCell>
-                  <TableCell align="right">{row.carbs}</TableCell>
-                  <TableCell align="right">{row.protein}</TableCell>
+                  <TableCell align="right">
+                    {Math.round(row.nf_calories * 100) / 100}
+                  </TableCell>
+                  <TableCell align="right">
+                    {Math.round(row.nf_total_fat * 100) / 100}
+                  </TableCell>
+                  <TableCell align="right">
+                    {Math.round(row.nf_total_carbohydrate * 100) / 100}
+                  </TableCell>
+                  <TableCell align="right">
+                    {Math.round(row.nf_protein * 100) / 100}
+                  </TableCell>
                 </TableRow>
               ))
             : rows.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={row.exercise}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {row.name}
+                    {row.exercise}
                   </TableCell>
+                  <TableCell align="right">{row.caloriesBurned}</TableCell>
                   <TableCell align="right">{row.length}</TableCell>
-                  <TableCell align="right">{row.calBurned}</TableCell>
                 </TableRow>
               ))}
         </TableBody>
@@ -62,5 +70,3 @@ function BasicTable({ type, rows }) {
     </TableContainer>
   );
 }
-
-export default BasicTable;

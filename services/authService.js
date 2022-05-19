@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import Link from "next/link";
 
 export function SignIn() {
   function signInWithGoogle() {
     signInWithPopup(auth, new GoogleAuthProvider());
   }
-  return <div className="signin"></div>;
+  return <Link onClick={signInWithGoogle}>Sign In</Link>;
 }
 
 export function SignOut() {
