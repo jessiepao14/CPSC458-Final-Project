@@ -14,9 +14,9 @@ import dynamic from "next/dynamic";
 
 export default function Summary() {
   //   const user = useAuthentication();
-  const DonutChart = dynamic(() => import("react-donut-chart"), {
-    ssr: false,
-  });
+  //   const DonutChart = dynamic(() => import("react-donut-chart"), {
+  //     ssr: false,
+  //   });
   const auth = getAuth();
   const user = auth.currentUser;
 
@@ -47,7 +47,7 @@ export default function Summary() {
         <SideNav active={"summary"} />
         <Body>
           <Header type={"Summary"} />
-          <DonutChart
+          {/* <DonutChart
             className=""
             data={[
               {
@@ -73,7 +73,7 @@ export default function Summary() {
                   ) / 100,
               },
             ]}
-          />
+          /> */}
         </Body>
       </Wrapper>
     </>
