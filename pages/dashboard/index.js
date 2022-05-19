@@ -81,8 +81,10 @@ export default function Dashboard() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Host": "nutritionix-api.p.rapidapi.com",
-      "X-RapidAPI-Key": "d3e288df0dmsh1ac4462fbacdc30p11ced6jsn597ebd34c064",
+      "X-RapidAPI-Host": process.env.RAPID_API_HOST,
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      //   "X-RapidAPI-Host": "nutritionix-api.p.rapidapi.com",
+      //   "X-RapidAPI-Key": "d3e288df0dmsh1ac4462fbacdc30p11ced6jsn597ebd34c064",
     },
   };
 
@@ -205,8 +207,12 @@ export default function Dashboard() {
             Search
           </Button>
           {foodResults.length > 0 ? (
-            foodResults.map((e) => (
-              <SearchedFood food={e.fields} addingItem={addingFood} />
+            foodResults.map((e, index) => (
+              <SearchedFood
+                key={index}
+                food={e.fields}
+                addingItem={addingFood}
+              />
             ))
           ) : (
             <DialogContentText>No results</DialogContentText>

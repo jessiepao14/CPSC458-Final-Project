@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DonutChart from "react-donut-chart";
+// import DonutChart from "react-donut-chart";
 
 import SideNav from "../../components/SideNav";
 import TopNav from "../../components/TopNav";
@@ -8,11 +8,15 @@ import Header from "../../components/Header";
 import { fetchFood } from "../../services/foodService";
 import { fetchExercise } from "../../services/exerciseService";
 import { getAuth } from "firebase/auth";
+import dynamic from "next/dynamic";
 
 // https://www.npmjs.com/package/react-donut-chart
 
 export default function Summary() {
   //   const user = useAuthentication();
+  const DonutChart = dynamic(() => import("react-donut-chart"), {
+    ssr: false,
+  });
   const auth = getAuth();
   const user = auth.currentUser;
 

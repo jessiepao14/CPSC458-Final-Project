@@ -31,7 +31,7 @@ export default function Home() {
         Welcome to
         <LocalGroceryStoreRoundedIcon sx={{ fontSize: 200 }} />
         MyNutriPal
-        <button class="btn" onClick={SignIn}>
+        <button className="btn" onClick={SignIn}>
           Click to Login
         </button>
       </Title>
