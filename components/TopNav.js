@@ -54,7 +54,7 @@ export default function TopNav() {
           aria-expanded={open ? "true" : undefined}
           onClick={handleClick}
         >
-          <Avatar src="/broken-image.jpg" />
+          <Avatar />
         </Button>
         <Menu
           id="basic-menu"

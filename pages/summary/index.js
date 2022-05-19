@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import DonutChart from "react-donut-chart";
 
 import SideNav from "../../components/SideNav";
 import TopNav from "../../components/TopNav";
@@ -7,16 +6,15 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import { fetchFood } from "../../services/foodService";
 import { fetchExercise } from "../../services/exerciseService";
+import DailyConsumptionCard from "../../components/DailyConsumptionCard";
 import { getAuth } from "firebase/auth";
 import dynamic from "next/dynamic";
 
-// https://www.npmjs.com/package/react-donut-chart
-
 export default function Summary() {
   //   const user = useAuthentication();
-  //   const DonutChart = dynamic(() => import("react-donut-chart"), {
-  //     ssr: false,
-  //   });
+  const DonutChart = dynamic(() => import("react-donut-chart"), {
+    ssr: false,
+  });
   const auth = getAuth();
   const user = auth.currentUser;
 
@@ -47,7 +45,7 @@ export default function Summary() {
         <SideNav active={"summary"} />
         <Body>
           <Header type={"Summary"} />
-          {/* <DonutChart
+          <DonutChart
             className=""
             data={[
               {
@@ -73,7 +71,7 @@ export default function Summary() {
                   ) / 100,
               },
             ]}
-          /> */}
+          />
         </Body>
       </Wrapper>
     </>
