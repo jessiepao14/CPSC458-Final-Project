@@ -17,7 +17,11 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   const SignIn = () => {
-    signInWithPopup(auth, new GoogleAuthProvider()).then(() => {
+    let provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt: "select_account",
+    });
+    signInWithPopup(auth, provider).then(() => {
       router.push("/dashboard");
     });
   };

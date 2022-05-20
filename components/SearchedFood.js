@@ -27,27 +27,13 @@ export default function SearchedFood({ food, addingItem }) {
   );
 }
 
-const CardWrapper = styled.div`
-  border: 1px solid clear;
-  background-color: #fff8eb;
-  border-radius: 32px;
-  box-shadow: 10px 10px 27px 7px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 10px 10px 27px 7px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 10px 10px 27px 7px rgba(0, 0, 0, 0.15);
-  margin: 20px;
-
-  @media screen and (max-width: 1000px) {
-    margin: 0;
-  }
-`;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 40vw;
+  width: 30vw;
 `;
 
 const ItemName = styled.p`
-  width: 45%;
+  width: 30%;
 `;
