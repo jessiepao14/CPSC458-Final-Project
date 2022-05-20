@@ -1,3 +1,17 @@
+Jessie Pao
+
+Deploy website here: [https://elaborate-genie-731ddf.netlify.app/](https://elaborate-genie-731ddf.netlify.app/)
+
+Resources:
+
+-[https://getbootstrap.com](https://getbootstrap.com) -[https://mui.com](https://mui.com)
+
+-[https://www.npmjs.com/package/react-donut-chart](https://www.npmjs.com/package/react-donut-chart)
+
+-[https://rapidapi.com/msilverman/api/nutritionix-nutrition-database](https://rapidapi.com/msilverman/api/nutritionix-nutrition-database)
+
+-[https://firebase.google.com](https://firebase.google.com)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
